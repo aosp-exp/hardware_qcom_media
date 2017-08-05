@@ -2,10 +2,8 @@ QCOM_MEDIA_ROOT := $(call my-dir)
 $(warning target list is : $(MSM_VIDC_TARGET_LIST)) 
  
 #Compile these for all targets under QCOM_BOARD_PLATFORMS list.
-ifeq ($(call is-board-platform-in-list, $(QCOM_BOARD_PLATFORMS)),true)
 include $(QCOM_MEDIA_ROOT)/mm-core/Android.mk
 include $(QCOM_MEDIA_ROOT)/libstagefrighthw/Android.mk
-endif
 
 ifeq ($(call is-board-platform-in-list, $(MSM_VIDC_TARGET_LIST)),true) 
 ifneq ($(filter msm8909 msm8916 msm8939,$(TARGET_BOARD_PLATFORM)),)
